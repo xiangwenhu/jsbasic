@@ -18,10 +18,10 @@
 * escape:   
  不推荐使用
 * encodeURI   
+编码整个URL
 ```js
 encodeURI("https://www.baidu.com");
 ```
-编码整个URL
 * encodeURIComponent   
 编码URL中的参数
 ```js
