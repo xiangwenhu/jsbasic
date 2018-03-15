@@ -29,6 +29,25 @@ encodeURI("https://www.baidu.com");
 ```
 
 
+## base64
+base64的编码解码
+```js
+function utf8_to_b64( str ) {
+    return window.btoa(unescape(encodeURIComponent( str )));
+}
+
+function b64_to_utf8( str ) {
+    return decodeURIComponent(escape(window.atob( str )));
+}
+
+// Usage:
+utf8_to_b64('✓ à la mode'); // "4pyTIMOgIGxhIG1vZGU="
+b64_to_utf8('4pyTIMOgIGxhIG1vZGU='); // "✓ à la mode"
+//译者注:在js引擎内部,encodeURIComponent(str)相当于escape(unicodeToUTF8(str))
+//所以可以推导出unicodeToUTF8(str)等同于unescape(encodeURIComponent(str))
+```
+
+
 
 > [Deprecated and obsolete features](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features)   
-  []
+  [简单明了区分escape、encodeURI和encodeURIComponent](http://www.cnblogs.com/season-huang/p/3439277.html)
